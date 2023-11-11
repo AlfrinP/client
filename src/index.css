@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+  img{
+    max-width: 100%;
+    height: auto;
+    shape-margin: 0.5rem;
+    vertical-align: middle;
+    font-size: italic;
+  }
+}
+@layer components {
+  .center {
+    @apply flex items-center justify-center;
+  }
+  .background-main {
+    background: linear-gradient(298deg, #000 0.63%, #6e33bf 189.88%);
+  }
+  .background-login {
+    border-radius: 12px;
+    background: linear-gradient(
+      91deg,
+      #6e33bf 9.91%,
+      #41208b 53.29%,
+      #2c1e59 91.56%
+    );
+  }
+  .background-form {
+    border-radius: 30px;
+    border: 1px solid rgb(122, 121, 121);
+    background: rgba(33, 12, 82, 0.13);
+    box-shadow: -8px 4px 5px 0px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(26.5px);
+  }
+  .height{
+    height: calc(100vh - 100px);
+  }
+}
