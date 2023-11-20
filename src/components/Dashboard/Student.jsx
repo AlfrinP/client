@@ -4,11 +4,21 @@ import upload from "../../assets/General/file-upload.png";
 import graph from "../../assets/General/graph.png";
 import Table from "./Table";
 import Navbar from "../Navbar";
+import FileUploadModel from "./FileUploadModal";
+import ViewPointsModal from "./ViewPointsModal";
 
 export default function Student() {
+  const [openFileModal, setOpenFileModal] = React.useState(false);
+  const [openViewPoints, setOpenViewPoints] = React.useState(false);
+
+ 
+  const handleOpenFileModal = () => setOpenFileModal(!openFileModal);
+  const handleOpenViewPoints = () => setOpenViewPoints(!openViewPoints);
   return (
     <div className="w-full h-screen">
       <Navbar />
+      <FileUploadModel isOpen={openFileModal} handleOpen={handleOpenFileModal}/>
+      <ViewPointsModal isOpen={openViewPoints} handleOpen={handleOpenViewPoints}/>
       <div className="w-full height center flex-col gap-5">
         <div className="w-full center justify-evenly">
           <div className="ring-offset-8 ring-2 ring-[#512B81] rounded-full w-32">
@@ -37,11 +47,11 @@ export default function Student() {
             </div>
           </div>
           <div className="center flex-col gap-3">
-            <button className="center bg-[#512B81] rounded-xl w-full p-3 justify-evenly">
+            <button className="center bg-[#512B81] rounded-xl w-full p-3 justify-evenly" onClick={handleOpenFileModal}>
               <img src={upload} width={30}/>
               <span className=" text-white">Upload Certificate</span>
             </button>
-            <button className="center bg-[#512B81] rounded-xl w-full p-3 justify-evenly">
+            <button className="center bg-[#512B81] rounded-xl w-full p-3 justify-evenly" onClick={handleOpenViewPoints}>
               <img src={graph} width={30}/>
               <span className=" text-white">View Points</span>
             </button>
