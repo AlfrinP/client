@@ -57,23 +57,23 @@ function Faculty() {
           </div>
           <div className="center flex-col w-fit gap-2 p-5 rounded-lg border-t border-solid border-gray-300 border-opacity-82 bg-white shadow-md shadow-offset-x-11 shadow-offset-y-24 shadow-blur-26 shadow-opacity-20">
             <div className="center gap-3 ">
-              <button className="center bg-[#512B81] rounded-xl w-fit p-3 justify-evenly gap-1">
+              <button className="bg-[#512B81]">
                 <span className=" text-white">Add Shortlist</span>
                 <img src={short} width={30} />
               </button>
-              <button className="center border-[#512B81] border-2 rounded-xl w-fit p-1.5 justify-evenly">
+              <button className="border-[#512B81]">
                 <img src={arrow_down} width={30} className="p-2" />
                 <span>Download Batch Report</span>
               </button>
             </div>
             <div className="center w-full gap-3 justify-around">
-              <button className="center flex-col items-start bg-[#512B81] rounded-xl w-fit p-3 text-white">
+              <button className="bg-[#512B81]" >
                 <span className="font-semibold">Pending</span>
               </button>
-              <button className="center flex-col items-start bg-[#512B81] rounded-xl w-fit p-3 text-white">
+              <button className="bg-[#512B81]" >
                 <span className="font-semibold">Activity Point</span>
               </button>
-              <button className="center flex-col items-start bg-[#512B81] rounded-xl w-fit p-3 text-white">
+              <button className="bg-[#512B81]" >
                 <span className="font-semibold">View sorted list</span>
               </button>
             </div>

@@ -55,14 +55,14 @@ export default function Student() {
           </div>
           <div className="center flex-col gap-3">
             <button
-              className="center  justify-evenly bg-[#512B81] w-full rounded gap-1 text-white px-4 py-2 text-sm font-medium cursor-pointer"
+              className="bg-[#512B81]"
               onClick={handleOpenFileModal}
             >
               <img src={upload} width={30} />
               <span className=" text-white">Upload Certificate</span>
             </button>
             <button
-              className="center justify-evenly bg-[#512B81] w-full rounded gap-1 text-white px-4 py-2 text-sm font-medium cursor-pointer"
+              className="bg-[#512B81]"
               onClick={handleOpenViewPoints}
             >
               <img src={graph} width={20} />
