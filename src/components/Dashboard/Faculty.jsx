@@ -7,7 +7,7 @@ import Navbar from "../Navbar";
 
 function Faculty() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full center flex-col">
       <Navbar />
       <div className="w-full center flex-col gap-5 px-60">
         <div className="w-full flex gap-10 ">
@@ -61,8 +61,8 @@ function Faculty() {
                 <span className=" text-white">Add Shortlist</span>
                 <img src={short} width={30} />
               </button>
-              <button className="border-[#512B81]">
-                <img src={arrow_down} width={30} className="p-2" />
+              <button className="border-solid border-2 border-[#512B81] text-black">
+                <img src={arrow_down} width={15} />
                 <span>Download Batch Report</span>
               </button>
             </div>

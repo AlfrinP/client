@@ -14,7 +14,7 @@ export default function Student() {
   const handleOpenFileModal = () => setOpenFileModal(!openFileModal);
   const handleOpenViewPoints = () => setOpenViewPoints(!openViewPoints);
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen center flex-col">
       <Navbar />
       <FileUploadModel
         isOpen={openFileModal}
@@ -24,7 +24,7 @@ export default function Student() {
         isOpen={openViewPoints}
         handleOpen={handleOpenViewPoints}
       />
-      <div className="w-full height center flex-col gap-5 px-60">
+      <div className="w-full center flex-col gap-5 px-60">
         <div className="w-full center justify-evenly">
           <div className="ring-offset-8 ring-2 ring-[#512B81] rounded-full w-32">
             <img src={sprofile} className="rounded-full" />
@@ -54,17 +54,11 @@ export default function Student() {
             </div>
           </div>
           <div className="center flex-col gap-3">
-            <button
-              className="bg-[#512B81]"
-              onClick={handleOpenFileModal}
-            >
+            <button className="bg-[#512B81]" onClick={handleOpenFileModal}>
               <img src={upload} width={30} />
               <span className=" text-white">Upload Certificate</span>
             </button>
-            <button
-              className="bg-[#512B81]"
-              onClick={handleOpenViewPoints}
-            >
+            <button className="bg-[#512B81]" onClick={handleOpenViewPoints}>
               <img src={graph} width={20} />
               <span className=" text-white">View Points</span>
             </button>
