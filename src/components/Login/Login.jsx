@@ -16,7 +16,7 @@ function Login() {
   };
 
   return (
-    <div className="w-full h-screen background-main center flex">
+    <div className="w-full background-main center flex">
       <div className="w-1/2 h-full center flex-col gap-10">
         <div className="w-full center flex-col gap-2">
           <div className="w-full text-center text-2xl text-white">

@@ -7,7 +7,7 @@ function Navbar() {
     <div className="h-[100px] center w-full">
       <div className="justify-between max-w-7xl w-full center p-1">
         <img src={christ} />
-        <button className="center gap-1 p-3">
+        <button className="center justify-end gap-1 p-3">
           <img src={logout} />
           <div className="text-lg text-[#512B81]">Logout</div>
         </button>
