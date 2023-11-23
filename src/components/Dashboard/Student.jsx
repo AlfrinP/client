@@ -6,6 +6,7 @@ import Table from "./Table";
 import Navbar from "../Navbar";
 import FileUploadModel from "./FileUploadModal";
 import ViewPointsModal from "./ViewPointsModal";
+import Button from "./Button";
 
 export default function Student() {
   const [openFileModal, setOpenFileModal] = React.useState(false);
@@ -61,6 +62,7 @@ export default function Student() {
           <Table />
         </div>
       </div>
+      <Button/>
     </div>
   );
 }
