@@ -55,23 +55,23 @@ export default function Student() {
           </div>
           <div className="center flex-col gap-3">
             <button
-              className="center bg-[#512B81] rounded text-white px-4 py-2 text-sm font-medium cursor-pointer"
+              className="center  justify-evenly bg-[#512B81] w-full rounded gap-1 text-white px-4 py-2 text-sm font-medium cursor-pointer"
               onClick={handleOpenFileModal}
             >
               <img src={upload} width={30} />
               <span className=" text-white">Upload Certificate</span>
             </button>
             <button
-              className="center bg-[#512B81] rounded text-white px-4 py-2 text-sm font-medium cursor-pointer"
+              className="center justify-evenly bg-[#512B81] w-full rounded gap-1 text-white px-4 py-2 text-sm font-medium cursor-pointer"
               onClick={handleOpenViewPoints}
             >
-              <img src={graph} className="w-" />
+              <img src={graph} width={20} />
               <span className=" text-white">View Points</span>
             </button>
           </div>
         </div>
         <div className="w-full center shadow-[0_3px_10px_rgb(0,0,0,0.2)] text-black rounded-lg">
-        <Table />
+          <Table />
         </div>
       </div>
     </div>
