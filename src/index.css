@@ -42,3 +42,11 @@
     height: calc(100vh - 100px);
   }
 }
+.message{
+    box-shadow: 0px 5px 16px 0px #080F342E;
+    border-radius: 10px 10px 10px 0px;
+}
+.box{
+  box-shadow: 0px 4px 48px 0px #00000040;
+
+}

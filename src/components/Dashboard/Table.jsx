@@ -1,6 +1,10 @@
 import React from "react";
+// import ViewCertificate from "./ViewCertificate";
 
 function Table() {
+  // const [openCertificate, setOpenCertificate] = React.useState(false);
+  // const handleCertificate = () => setOpenCertificate(!openCertificate);
+
   const data = [
     {
       no: "01",
@@ -75,7 +79,12 @@ function Table() {
               <td className="px-5 py-2 text-center">{item.point}</td>
               <td className="px-5 py-2 text-center">{item.year}</td>
               <td className="px-5 py-2 center"><div className="p-2 px-3 w-fit rounded-full text-center font-semibold text-[#0909B1] bg-[#e2e2ff]">{item.approval}</div></td>
-              <td className="px-5 py-2 text-center text-[#512B81] hover:underline cursor-pointer">View</td>
+              <td className="px-5 py-2 text-center text-[#512B81] hover:underline cursor-pointer">
+              {/* <ViewCertificate
+                isOpen={openCertificate}
+                handleOpen={handleCertificate}
+                /> */}
+                View</td>
             </tr>
           ))}
         </tbody>

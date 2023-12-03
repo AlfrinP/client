@@ -14,6 +14,7 @@ export default function Student() {
 
   const handleOpenFileModal = () => setOpenFileModal(!openFileModal);
   const handleOpenViewPoints = () => setOpenViewPoints(!openViewPoints);
+  
   return (
     <div className="w-full h-screen center flex-col">
       <Navbar />
@@ -69,7 +70,7 @@ export default function Student() {
           <Table />
         </div>
       </div>
-      <Button/>
+      <Button className="ml-"/>
     </div>
   );
 }
