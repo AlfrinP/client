@@ -40,16 +40,24 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
             <h3 className="mb-4">Activity Name</h3>
             <input
               type="text"
-              placeholder="Hack2Hack"
+              placeholder="Eg: Hack2Hack"
               className="border-2 border-blue-gray-100 p-2 rounded-lg mb-2"
             />
             <h3 className="mb-2">Category</h3>
-            <Select variant="outlined" label="Hackathon" className="mb-2">
+            <Select variant="outlined" label="Event" className="mb-2">
               <Option>Techical</Option>
+              <Option>Hackathon</Option>
+              <Option>Sports</Option>
+              <Option>Arts</Option>
+              <Option>Workshops</Option>
             </Select>
             <h3 className="mb-2 mt-2">Level</h3>
-            <Select variant="outlined" label="District">
+            <Select variant="outlined" label="Zone">
+              <Option>E-zone</Option>
+              <Option>District</Option>
               <Option>State</Option>
+              <Option>National</Option>
+              <Option>International;</Option>
             </Select>
             <h3 className="mb-2 mt-2">Date</h3>
             <div className="flex flex-row">
@@ -58,15 +66,15 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
           </div>
           <div>
             <div className="flex flex-row gap-8 center mt-[150px]">
-              <Button className="text-green-600 flex flex-row bg-green-100 w-fit p-1 px-2 rounded-md">
+              <Button className="flex flex-row bg-green-100 w-fit p-1 px-2 rounded-md text-lowercase capitalize" style={{color:'#076F2C'}}>
                 <img src={Download} alt="download" className=" w-[19px]" />
                 Download
               </Button>
-              <Button className="text-[#00008B] flex flex-row bg-blue-gray-100 w-fit p-1 px-7 rounded-md">
+              <Button className="flex flex-row bg-blue-gray-100 w-fit p-1 px-7 rounded-md text-lowercase capitalize" style={{color:'#2930D4'}}>
                 <img src={Blue} alt="edit" />
                 Edit
               </Button>
-              <Button className="text-[#F11212] flex flex-row bg-red-200 w-fit p-1 px-3 rounded-md">
+              <Button className="flex flex-row bg-red-200 w-fit p-1 px-4 rounded-md text-lowercase capitalize" style={{color:'#FF3333'}}>
                 <img src={Delete} alt="clear" />
                 Delete
               </Button>
@@ -74,11 +82,11 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
             <img src={Certificate} alt="certificate" className="hover:filter hover:brightness-50 transition" />
             <div className="flex flex-row gap-10 ml-[230px]">
               <ButtonGroup variant="outlined">
-                <Button className="text-purple-900 flex flex-row  w-fit p-2 px-4 rounded-full border-purple-900">
+                <Button className="flex flex-row  w-fit p-2 px-4 rounded-full border-purple-900 text-lowercase capitalize" style={{color:'#512B81'}}>
                   Cancel
                 </Button>
               </ButtonGroup>
-              <Button className="text-white flex flex-row bg-purple-900 w-fit p-2 px-6 rounded-full">
+              <Button className="flex flex-row bg-purple-900 w-fit p-2 px-6 rounded-full text-lowercase capitalize" style={{color:'white'}}>
                 Save
               </Button>
             </div>
