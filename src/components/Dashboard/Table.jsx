@@ -1,9 +1,9 @@
 import React from "react";
-// import ViewCertificate from "./ViewCertificate";
+import ViewCertificate from "./ViewCertificate";
 
 function Table() {
-  // const [openCertificate, setOpenCertificate] = React.useState(false);
-  // const handleCertificate = () => setOpenCertificate(!openCertificate);
+  const [openViewCertificate, setOpenViewCertificate] = React.useState(false);
+  const handleViewCertificate = () => setOpenViewCertificate(!openViewCertificate);
 
   const data = [
     {
@@ -41,6 +41,10 @@ function Table() {
   ];
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full">
+      <ViewCertificate
+        isOpen={openViewCertificate}
+        handleOpen={handleViewCertificate}
+      />
       <table className="w-full text-sm text-left rtl:text-right text-black">
         <thead className="text-black uppercase bg-gray-5 border-b text-sm">
           <tr>
@@ -80,10 +84,10 @@ function Table() {
               <td className="px-5 py-2 text-center">{item.year}</td>
               <td className="px-5 py-2 center"><div className="p-2 px-3 w-fit rounded-full text-center font-semibold text-[#0909B1] bg-[#e2e2ff]">{item.approval}</div></td>
               <td className="px-5 py-2 text-center text-[#512B81] hover:underline cursor-pointer">
-              {/* <ViewCertificate
-                isOpen={openCertificate}
-                handleOpen={handleCertificate}
-                /> */}
+              <ViewCertificate
+                isOpen={openViewCertificate}
+                handleOpen={handleViewCertificate}
+                />
                 View</td>
             </tr>
           ))}

@@ -6,16 +6,20 @@ import Table from "./Table";
 import Navbar from "../Navbar";
 import FileUploadModel from "./FileUploadModal";
 import ViewPointsModal from "./ViewPointsModal";
-import Button from "./Button";
+import Button from "./PopMessage";
+import ViewCertificate from "./ViewCertificate";
 
 export default function Student() {
   const [openFileModal, setOpenFileModal] = React.useState(false);
   const [openViewPoints, setOpenViewPoints] = React.useState(false);
+  const [openViewCertificate, setOpenViewCertificate] = React.useState(false);
 
   const handleOpenFileModal = () => setOpenFileModal(!openFileModal);
   const handleOpenViewPoints = () => setOpenViewPoints(!openViewPoints);
-  
+  const handleOpenViewCertificate = () => setOpenViewCertificate(!openViewCertificate);
+
   return (
+    <>
     <div className="w-full h-screen center flex-col">
       <Navbar />
       <FileUploadModel
@@ -26,6 +30,7 @@ export default function Student() {
         isOpen={openViewPoints}
         handleOpen={handleOpenViewPoints}
       />
+      
       <div className="w-full center flex-col gap-5 px-60">
         <div className="w-full center justify-evenly">
           <div className="ring-offset-8 ring-2 ring-[#512B81] rounded-full w-32">
@@ -70,7 +75,10 @@ export default function Student() {
           <Table />
         </div>
       </div>
-      <Button className="ml-"/>
+      <span className="flex items-start w-full pl-11 ">
+        <Button/>
+      </span>   
     </div>
+    </>
   );
 }
