@@ -1,12 +1,20 @@
 import React from 'react'
-import {Button} from "@material-tailwind/react";
+import {
+  Button,
+  Select,
+  Option,
+  Dialog,
+  DialogBody,
+  DialogHeader,
+} from "@material-tailwind/react";
 import Printer from "../../assets/General/printer.svg"
 import Certificate from "../../assets/General/certificate.png"
 import Download from "../../assets/General/material-symbols_download.png"
-const Print = () => {
+
+const Print = ({ isopen }) => {
   return (
     <>
-      <div className='center border-t border-b border-purple-700 py-28 w-full center justify-center items-center'>
+      <div className='center border-t border-purple-700 py-28 w-full center justify-center items-center'>
         <img src={Certificate} alt='certificate'/>
       </div>
       <div className='flex flex-row gap-8 justify-end mt-4 mr-4'>

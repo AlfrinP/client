@@ -73,7 +73,7 @@ export default function Student() {
           <Table />
         </div>
       </div>
-      <span className="flex items-start w-full pl-11 ">
+      <span className="flex items-start w-full pl-24 ">
         <Button/>
       </span>   
     </div>

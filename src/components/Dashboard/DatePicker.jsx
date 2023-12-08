@@ -19,7 +19,7 @@ const DatePicker = () => {
   }, []);
 
   const handleClearClick = () => {
-    setSelectedDate(null);
+    setSelectedDate();
   };
 
   return (

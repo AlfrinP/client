@@ -7,16 +7,12 @@ import {
   DialogBody,
   DialogHeader,
 } from "@material-tailwind/react";
-// import Certificate from "../../assets/General/certificate.png";
-import Blue from "../../assets/General/Edit.svg";
-import Download from "../../assets/General/material-symbols_download.png";
+import Certificate from "../../assets/General/certificate.png";
+import BlueClear from "../../assets/General/Blueclear.svg";
 import Delete from "../../assets/General/deletered.svg";
 import DatePicker from "./DatePicker";
-import LargeView from "./LargeView";
-import EditCertificate from "./EditCertificate";
-const ViewCertificate = ({ isOpen, handleOpen }) => {
-  const [openEditCertificate, setOpenEditCertificate] = React.useState(false);
-  const handleOpenEditCertificate = () => setOpenEditCertificate(!openEditCertificate);
+
+const EditCertificate = ({ isOpen, handleOpen }) => {
   return (
     <Dialog open={isOpen} handler={handleOpen} className="p-4">
       <svg
@@ -37,10 +33,6 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
       </DialogHeader>
       <DialogBody>
         <div className="flex flex-row w-full justify-center">
-        <EditCertificate
-        isOpen={openEditCertificate}
-        handleOpen={handleOpenEditCertificate}
-      />
           <div className="flex flex-col w-full">
             <h3 className="mb-4">Activity Name</h3>
             <input
@@ -70,36 +62,50 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
             </div>
           </div>
           <div>
-            <div className="flex flex-row center gap-2">
-              <Button className="flex flex-row bg-green-100 w-fit p-1 px-2 rounded-md text-lowercase capitalize" style={{color:'#076F2C'}}>
-                <img src={Download} alt="download" className=" w-[19px]" />
-                Download
+            <div className="flex flex-row justify-end gap-2">
+              <Button
+                onClick={handleOpen}
+                className="flex flex-row bg-blue-gray-100 w-fit p-1 px-5 rounded-md text-lowercase capitalize"
+                style={{ color: "#2930D4" }}
+              >
+                <img src={BlueClear} alt="edit" />
+                Cancel
               </Button>
-              <Button onClick={handleOpenEditCertificate} className="flex flex-row bg-blue-gray-100 w-fit p-1 px-7 rounded-md text-lowercase capitalize" style={{color:'#2930D4'}}>
-                <img src={Blue} alt="edit" />
-                Edit
-              </Button>
-              <Button className="flex flex-row bg-red-200 w-fit p-1 px-4 rounded-md text-lowercase capitalize" style={{color:'#FF3333'}}>
+              <Button
+                className="flex flex-row bg-red-200 w-fit p-1 px-4 rounded-md text-lowercase capitalize"
+                style={{ color: "#FF3333" }}
+              >
                 <img src={Delete} alt="clear" />
                 Delete
               </Button>
             </div>
-            <LargeView/>
+            <img
+              src={Certificate}
+              alt="certificate"
+              className="hover:filter hover:brightness-50 transition mt-10 ml-5"
+            />
             <div className="flex flex-row gap-5 justify-end">
               <ButtonGroup variant="outlined">
-                <Button onClick={handleOpen} className="flex flex-row  w-fit p-2 px-4 rounded-full border-purple-900 text-lowercase capitalize" style={{color:'#512B81'}}>
+                <Button
+                  onClick={handleOpen}
+                  className="flex flex-row  w-fit p-2 px-4 rounded-full border-purple-900 text-lowercase capitalize"
+                  style={{ color: "#512B81" }}
+                >
                   Cancel
                 </Button>
               </ButtonGroup>
-              <Button className="flex flex-row bg-purple-900 w-fit p-2 px-6 rounded-full text-lowercase capitalize" style={{color:'white'}}>
+              <Button
+                className="flex flex-row bg-purple-900 w-fit p-2 px-6 rounded-full text-lowercase capitalize"
+                style={{ color: "white" }}
+              >
                 Save
               </Button>
             </div>
           </div>
         </div>
-       </DialogBody>
-     </Dialog>
+      </DialogBody>
+    </Dialog>
   );
 };
 
-export default ViewCertificate;
+export default EditCertificate;

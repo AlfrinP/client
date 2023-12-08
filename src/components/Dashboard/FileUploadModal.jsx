@@ -1,15 +1,13 @@
 import React from 'react';
 import { Select, Option, Dialog, DialogBody, DialogHeader } from '@material-tailwind/react';
-
+import Add from "../../assets/General/Addicon.svg"
 function FileUploadModel({ isOpen, handleOpen }) {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
   return (
     <Dialog open={isOpen} handler={handleOpen} className='p-4'>
       <svg
-
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -32,13 +30,12 @@ function FileUploadModel({ isOpen, handleOpen }) {
             <p className="text-gray-400 text-center pb-4">or click</p>
           </div>
           <div className="bg-[#512B81] rounded z-10 flex items-center justify-center gap-2 px-9 h-12 -mt-12 cursor-pointer">
+            <img src={Add} alt="addicon" />
             <p className="text-white">Add files</p>
           </div>
-
           <div className="w-full">
             <h4 className="text-black text-md font-medium">OPTIONS</h4>
             <hr className="border-gray-400" />
-
             <div className="grid grid-cols-2 gap-5 mt-4">
               <Select variant="outlined" label="Category">
                 <Option>1</Option>
