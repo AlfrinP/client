@@ -7,16 +7,14 @@ import Navbar from "../Navbar";
 import FileUploadModel from "./FileUploadModal";
 import ViewPointsModal from "./ViewPointsModal";
 import Button from "./PopMessage";
-import ViewCertificate from "./ViewCertificate";
+
 
 export default function Student() {
   const [openFileModal, setOpenFileModal] = React.useState(false);
   const [openViewPoints, setOpenViewPoints] = React.useState(false);
-  const [openViewCertificate, setOpenViewCertificate] = React.useState(false);
 
   const handleOpenFileModal = () => setOpenFileModal(!openFileModal);
   const handleOpenViewPoints = () => setOpenViewPoints(!openViewPoints);
-  const handleOpenViewCertificate = () => setOpenViewCertificate(!openViewCertificate);
 
   return (
     <>

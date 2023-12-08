@@ -17,25 +17,25 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
   //   e.preventDefault();
   // };
   return (
-    // <Dialog open={isOpen} handler={handleOpen} className="p-4">
-    //   <svg
-    //     xmlns="http://www.w3.org/2000/svg"
-    //     viewBox="0 0 24 24"
-    //     fill="currentColor"
-    //     className="mr-3 h-5 w-5 float-right"
-    //     onClick={handleOpen}
-    //   >
-    //     <path
-    //       fillRule="evenodd"
-    //       d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-    //       clipRule="evenodd"
-    //     />
-    //   </svg>
-    //   <DialogHeader>
-    //     <h1 className="text-2xl font-bold">Upload files</h1>
-    //   </DialogHeader>
-      // <DialogBody>
-        <div className="flex flex-row w-full center gap-10 justify-center">
+    <Dialog open={isOpen} handler={handleOpen} className="p-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="mr-3 h-5 w-5 float-right"
+        onClick={handleOpen}
+      >
+        <path
+          fillRule="evenodd"
+          d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+          clipRule="evenodd"
+        />
+      </svg>
+      <DialogHeader>
+        <h1 className="text-2xl font-bold">Upload files</h1>
+      </DialogHeader>
+      <DialogBody>
+        <div className="flex flex-row w-full gap-10 justify-center">
           <div className="flex flex-col">
             <h3 className="mb-4">Activity Name</h3>
             <input
@@ -65,7 +65,7 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
             </div>
           </div>
           <div>
-            <div className="flex flex-row gap-8 center mt-[150px]">
+            <div className="flex flex-row gap-8 center ">
               <Button className="flex flex-row bg-green-100 w-fit p-1 px-2 rounded-md text-lowercase capitalize" style={{color:'#076F2C'}}>
                 <img src={Download} alt="download" className=" w-[19px]" />
                 Download
@@ -92,8 +92,8 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
             </div>
           </div>
         </div>
-    //   </DialogBody>
-    // </Dialog>
+       </DialogBody>
+     </Dialog>
   );
 };
 

@@ -6,11 +6,11 @@ import Print from "./components/Dashboard/Print";
 function App() {
   return (
     <>
-      <Login />
+      {/* <Login /> */}
       <Student/>
-      <Faculty />
-      <ViewCertificate/>
-      <Print/>
+      {/* <Faculty /> */}
+      {/* <ViewCertificate/> */}
+      {/* <Print/> */}
     </>
   );
 }
