@@ -7,16 +7,19 @@ import {
   DialogBody,
   DialogHeader,
 } from "@material-tailwind/react";
-// import Certificate from "../../assets/General/certificate.png";
 import Blue from "../../assets/General/Edit.svg";
 import Download from "../../assets/General/material-symbols_download.png";
 import Delete from "../../assets/General/deletered.svg";
 import DatePicker from "./DatePicker";
 import LargeView from "./LargeView";
 import EditCertificate from "./EditCertificate";
+import Print from "./Print";
 const ViewCertificate = ({ isOpen, handleOpen }) => {
   const [openEditCertificate, setOpenEditCertificate] = React.useState(false);
+  const [openPrint, setOpenPrint] = React.useState(false);
+
   const handleOpenEditCertificate = () => setOpenEditCertificate(!openEditCertificate);
+  const handleOpenPrint = () => setOpenPrint(!openPrint);
   return (
     <Dialog open={isOpen} handler={handleOpen} className="p-4">
       <svg
@@ -40,6 +43,10 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
         <EditCertificate
         isOpen={openEditCertificate}
         handleOpen={handleOpenEditCertificate}
+      />
+      <Print
+        isOpen={openPrint}
+        handleOpen={handleOpenPrint}
       />
           <div className="flex flex-col w-full">
             <h3 className="mb-4">Activity Name</h3>
@@ -71,7 +78,7 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
           </div>
           <div>
             <div className="flex flex-row center gap-2">
-              <Button className="flex flex-row bg-green-100 w-fit p-1 px-2 rounded-md text-lowercase capitalize" style={{color:'#076F2C'}}>
+              <Button onClick={handleOpenPrint} className="flex flex-row bg-green-100 w-fit p-1 px-2 rounded-md text-lowercase capitalize" style={{color:'#076F2C'}}>
                 <img src={Download} alt="download" className=" w-[19px]" />
                 Download
               </Button>

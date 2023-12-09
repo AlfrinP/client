@@ -22,7 +22,7 @@ const LargeView = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="mr-3 h-5 w-5 float-right mt-10 cursor-pointer"
+          className="mr-3 h-5 w-5 float-right cursor-pointer"
           onClick={handleOpen}
         >
           <path
@@ -31,7 +31,10 @@ const LargeView = () => {
             clipRule="evenodd"
           />
         </svg>
-        <img alt="nature" className="rounded-lg w-full" src={Certificate} />
+        <h1 className="mt-10 center font-bold text-xl hover:text-black">View Certificate</h1>
+        <div className='center border-t border-gray-600  w-full center justify-center items-center'>
+          <img src={Certificate} alt='certificate' className='w-full'/>
+        </div>
       </Dialog>
     </>
   );

@@ -30,7 +30,7 @@ function FileUploadModel({ isOpen, handleOpen }) {
             <p className="text-gray-400 text-center pb-4">or click</p>
           </div>
           <div className="bg-[#512B81] rounded z-10 flex items-center justify-center gap-2 px-9 h-12 -mt-12 cursor-pointer">
-            <img src={Add} alt="addicon" />
+            <img src={Add} alt="addicon" className='w-5'/>
             <p className="text-white">Add files</p>
           </div>
           <div className="w-full">
@@ -62,7 +62,7 @@ function FileUploadModel({ isOpen, handleOpen }) {
               <span className="text-gray-700">or</span>
               <a href="#" className="text-[#512B81] underline">Cancel</a>
             </div>
-            <button onClick={handleOpen} className="bg-[#512B81] rounded text-white px-4 py-1 cursor-pointer">Done</button>
+            <button onClick={handleOpen} className="bg-[#512B81] rounded text-white  cursor-pointer w-fit">Done</button>
           </div>
         </form>
       </DialogBody>

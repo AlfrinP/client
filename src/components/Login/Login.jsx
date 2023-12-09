@@ -3,6 +3,8 @@ import si from "../../assets/Login/student_icon.png";
 import fi from "../../assets/Login/faculty_icon.png";
 import book from "../../assets/Login/book.png";
 import PasswordInput from "./PasswordInput";
+import Student from "../Dashboard/Student";
+import Faculty from "../Dashboard/Faculty";
 
 function Login() {
   const [data, setData] = useState("Student Login");
@@ -14,6 +16,12 @@ function Login() {
   const handleFacultyLogin = () => {
     setData("Faculty Login");
   };
+
+    // if (data === "Student Login") {
+    //   return <Student />;
+    // } else if (data === "Faculty Login") {
+    //   return <Faculty />;
+    // }
 
   return (
     <div className="w-full background-main center flex">

@@ -26,7 +26,7 @@ export default function PasswordInput(props) {
         placeholder:text-lg "
       />
       <button
-        className="absolute inset-y-0 right-0 flex items-center px-4"
+        className="absolute inset-y-0 right-0 flex items-center px-4 justify-end mr-3"
         onClick={togglePasswordVisibility}
       >
         {isPasswordVisible ? (
