@@ -36,7 +36,7 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
         />
       </svg>
       <DialogHeader>
-        <h1 className="text-2xl font-bold">Upload files</h1>
+        <h1 className="text-2xl font-bold text-gray-600 hover:text-black">Uploaded Details</h1>
       </DialogHeader>
       <DialogBody>
         <div className="flex flex-row w-full justify-center">

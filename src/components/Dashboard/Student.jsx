@@ -6,7 +6,7 @@ import Table from "./tables/Table";
 import Navbar from "../Navbar";
 import FileUploadModel from "./FileUploadModal";
 import ViewPointsModal from "./ViewPointsModal";
-import Button from "./PopMessage";
+import PopMessage from "./PopMessage";
 
 
 export default function Student() {
@@ -44,7 +44,7 @@ export default function Student() {
             <div className="center justify-start w-full gap-3">
               <div className="center flex-col items-start bg-[#512B81] rounded-xl w-[180px] py-1 px-2 justify-evenly text-white">
                 <span className="font-light">Register No:</span>
-                <span className="font-semibold">CCE23CS032</span>
+                <span className="font-semibold">CCE22CS032</span>
               </div>
               <div className="center flex-col items-start w-[180px] border-2 border-[#512B81] rounded-xl py-1 px-2 justify-evenly text-white">
                 <span className="font-light text-[#512B81] ">Branch</span>
@@ -74,7 +74,7 @@ export default function Student() {
         </div>
       </div>
       <span className="flex items-start w-full pl-24 ">
-        <Button/>
+        <PopMessage/>
       </span>   
     </div>
     </>

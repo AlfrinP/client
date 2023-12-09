@@ -8,35 +8,31 @@ function Table2() {
   const data = [
     {
       no: "01",
-      Name: "Aalap",
-      Regno: "CCE22CS001",
+      activity: "NSS",
+      level: "District",
       point: "15",
       year: "23-24",
-      approval: "Approved",
     },
     {
       no: "01",
-      Name: "Abhishek",
-      Regno: "CCE22CS001",
+      activity: "NSS",
+      level: "District",
       point: "15",
       year: "23-24",
-      approval: "Approved",
     },
     {
       no: "01",
-      Name: "Adithya",
-      Regno: "CCE22CS001",
+      activity: "NSS",
+      level: "District",
       point: "15",
       year: "23-24",
-      approval: "Approved",
     },
     {
       no: "01",
-      Name: "Agna",
-      Regno: "CCE22CS001",
+      activity: "NSS",
+      level: "District",
       point: "15",
       year: "23-24",
-      approval: "Approved",
     },
   ];
   return (
@@ -52,10 +48,10 @@ function Table2() {
               No
             </th>
             <th scope="col" className="px-5 py-3 text-center">
-              Name
+              Activity
             </th>
             <th scope="col" className="px-5 py-3 text-center">
-              Reg no
+              Level
             </th>
             <th scope="col" className="px-5 py-3 text-center">
               Point
@@ -72,8 +68,8 @@ function Table2() {
               className="odd:bg-white even:bg-[#F7F6FE] "
             >
               <td className="px-5 py-2 text-center text-black">{item.no}</td>
-              <td className="px-5 py-2 text-center text-black">{item.Name}</td>
-              <td className="px-5 py-2 text-center text-black">{item.Regno}</td>
+              <td className="px-5 py-2 text-center text-black">{item.activity}</td>
+              <td className="px-5 py-2 text-center text-black">{item.level}</td>
               <td className="px-5 py-2 text-center text-black">{item.point}</td>
               <td className="px-5 py-2 text-center text-black">{item.year}</td>
             </tr>

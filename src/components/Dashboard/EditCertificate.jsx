@@ -29,7 +29,7 @@ const EditCertificate = ({ isOpen, handleOpen }) => {
         />
       </svg>
       <DialogHeader>
-        <h1 className="text-2xl font-bold">Upload files</h1>
+        <h1 className="text-2xl font-bold text-gray-600 hover:text-black">Uploaded Details</h1>
       </DialogHeader>
       <DialogBody>
         <div className="flex flex-row w-full justify-center">
@@ -64,6 +64,7 @@ const EditCertificate = ({ isOpen, handleOpen }) => {
           <div>
             <div className="flex flex-row justify-end gap-2">
               <Button
+                onClick={handleOpen}
                 className="flex flex-row bg-blue-gray-100 w-fit p-1 px-5 rounded-md text-lowercase capitalize"
                 style={{ color: "#2930D4" }}
               >
