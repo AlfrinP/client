@@ -64,7 +64,6 @@ const EditCertificate = ({ isOpen, handleOpen }) => {
           <div>
             <div className="flex flex-row justify-end gap-2">
               <Button
-                onClick={handleOpen}
                 className="flex flex-row bg-blue-gray-100 w-fit p-1 px-5 rounded-md text-lowercase capitalize"
                 style={{ color: "#2930D4" }}
               >

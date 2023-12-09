@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, Option, Dialog, DialogBody, DialogHeader } from '@material-tailwind/react';
+import { Select, Option, Dialog, DialogBody, DialogHeader,Button } from '@material-tailwind/react';
 import Add from "../../assets/General/Addicon.svg"
 function FileUploadModel({ isOpen, handleOpen }) {
   const handleSubmit = (e) => {
@@ -53,16 +53,16 @@ function FileUploadModel({ isOpen, handleOpen }) {
           </div>
           <div className="w-full flex justify-between items-center mt-4">
             <div className="flex items-center gap-3">
-              <button
+              <Button
                 type="submit"
-                className="bg-[#512B81] rounded text-white px-4 py-2 text-sm font-medium cursor-pointer"
+                className="bg-[#512B81] rounded text-white px-4 py-2 text-sm font-medium cursor-pointer text-lowercase capitalize" style={{color: "white"}}
               >
                 Upload files
-              </button>
+              </Button>
               <span className="text-gray-700">or</span>
               <a href="#" className="text-[#512B81] underline">Cancel</a>
             </div>
-            <button onClick={handleOpen} className="bg-[#512B81] rounded text-white  cursor-pointer w-fit">Done</button>
+            <Button onClick={handleOpen} className="bg-[#512B81] rounded text-white  cursor-pointer w-fit text-lowercase capitalize" style={{color:"white"}}>Done</Button>
           </div>
         </form>
       </DialogBody>

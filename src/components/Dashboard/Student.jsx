@@ -2,7 +2,7 @@ import React from "react";
 import sprofile from "../../assets/Dashboard/Student/profile.png";
 import upload from "../../assets/General/file-upload.png";
 import graph from "../../assets/General/graph.png";
-import Table from "./Table";
+import Table from "./tables/Table";
 import Navbar from "../Navbar";
 import FileUploadModel from "./FileUploadModal";
 import ViewPointsModal from "./ViewPointsModal";

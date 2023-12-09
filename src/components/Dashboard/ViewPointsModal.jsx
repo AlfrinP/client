@@ -1,6 +1,6 @@
 import { Dialog, DialogBody, DialogHeader, Option, Select } from '@material-tailwind/react'
 import React from 'react'
-import Table from './Table'
+import Table2 from './tables/Table2'
 
 function ViewPointsModal({ isOpen, handleOpen }) {
     return (
@@ -20,14 +20,23 @@ function ViewPointsModal({ isOpen, handleOpen }) {
                 />
             </svg>
             <DialogHeader>
-                <h3>Activity Points</h3>
+                <h3 className='text-purple-900'>Activity Points</h3>
             </DialogHeader>
 
-            <DialogBody className='flex flex-col gap-5'>
+            <DialogBody className='flex flex-col border-t border-gray-600'>
+            <h1 className='text-black'>Year</h1>
+            <div className='flex flex-row gap-10 center mb-3'>
             <Select variant="outlined" label="Select">
-                <Option>NSS</Option>
+                <Option>22-23</Option>
+                <Option>23-24</Option>
+                <Option>24-25</Option>
+                <Option>25-26</Option>
               </Select>
-                <Table />
+              <div className='bg-purple-900 w-fit p-2 rounded-lg box'>
+                <p className='text-center text-white'>Total Points 90</p>
+              </div>
+            </div>
+                <Table2 />
             </DialogBody>
         </Dialog>
     )

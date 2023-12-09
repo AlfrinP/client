@@ -1,5 +1,5 @@
 import React from "react";
-import ViewCertificate from "./ViewCertificate";
+import ViewCertificate from "../ViewCertificate";
 
 function Table() {
   const [openViewCertificate, setOpenViewCertificate] = React.useState(false);

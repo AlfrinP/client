@@ -2,7 +2,7 @@ import React from "react";
 import faculty from "../../assets/Dashboard/Faculty/faculty.png";
 import short from "../../assets/General/short.png";
 import arrow_down from "../../assets/General/arrow_down.svg";
-import Table from "./Table";
+import Table from "./tables/Table";
 import Navbar from "../Navbar";
 
 function Faculty() {
