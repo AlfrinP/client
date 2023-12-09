@@ -25,15 +25,15 @@ function ViewPointsModal({ isOpen, handleOpen }) {
 
             <DialogBody className='flex flex-col border-t border-gray-600'>
             <h1 className='text-black'>Year</h1>
-            <div className='flex flex-row gap-10 center mb-3'>
+            <div className='flex flex-row gap-20 center mb-3'>
             <Select variant="outlined" label="Select">
                 <Option>22-23</Option>
                 <Option>23-24</Option>
                 <Option>24-25</Option>
                 <Option>25-26</Option>
               </Select>
-              <div className='bg-purple-900 w-fit p-2 rounded-lg box'>
-                <p className='text-center text-white'>Total Points 90</p>
+              <div className='bg-purple-900 w-fit py-1 px-5 rounded-lg box'>
+                <p className='text-center text-white text-xs'>Total Points 90</p>
               </div>
             </div>
                 <Table2 />
