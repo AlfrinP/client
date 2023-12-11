@@ -2,7 +2,7 @@ import React from "react";
 import faculty from "../../assets/Dashboard/Faculty/faculty.png";
 import short from "../../assets/General/short.png";
 import arrow_down from "../../assets/General/arrow_down.svg";
-import Table from "./tables/Table";
+import TableFaculty from "./tables/TableFaculty";
 import Navbar from "../Navbar";
 
 function Faculty() {
@@ -81,7 +81,7 @@ function Faculty() {
         </div>
         <div className="font-bold text-lg w-full text-start">Batch Report</div>
         <div className="w-full center shadow-[0_3px_10px_rgb(0,0,0,0.2)] text-black rounded-lg">
-          <Table />
+          <TableFaculty />
         </div>
       </div>
     </div>

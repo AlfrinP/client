@@ -37,7 +37,7 @@ const DatePicker = () => {
       <img
         src={Clear}
         alt="clear"
-        className="w-5 ml-2 cursor-pointer"
+        className="w-4 ml-2 cursor-pointer absolute mr-2 right-0"
         onClick={handleClearClick}
       />
     </div>

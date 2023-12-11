@@ -78,7 +78,7 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
           </div>
           <div>
             <div className="flex flex-row center gap-2">
-              <Button onClick={handleOpenPrint} className="flex flex-row bg-green-100 w-fit p-1 px-2 rounded-md text-lowercase capitalize" style={{color:'#076F2C'}}>
+              <Button onClick={handleOpenPrint} className="flex flex-row bg-green-100 w-fit p-1 px-4 rounded-md text-lowercase capitalize" style={{color:'#076F2C'}}>
                 <img src={Download} alt="download" className=" w-[19px]" />
                 Download
               </Button>
@@ -87,7 +87,7 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
                 Edit
               </Button>
               <Button className="flex flex-row bg-red-200 w-fit p-1 px-4 rounded-md text-lowercase capitalize" style={{color:'#FF3333'}}>
-                <img src={Delete} alt="clear" />
+                <img src={Delete} alt="delete" />
                 Delete
               </Button>
             </div>

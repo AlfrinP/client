@@ -1,10 +1,7 @@
 import React from "react";
-import ViewCertificate from "../ViewCertificate";
 
 function Table2() {
-  const [openViewCertificate, setOpenViewCertificate] = React.useState(false);
-  const handleOpenViewCertificate = () => setOpenViewCertificate(!openViewCertificate);
-
+  
   const data = [
     {
       no: "01",
@@ -37,10 +34,6 @@ function Table2() {
   ];
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full">
-      <ViewCertificate
-        isOpen={openViewCertificate}
-        handleOpen={handleOpenViewCertificate}
-      />
       <table className="w-full text-sm text-left rtl:text-right text-black">
         <thead className="text-black uppercase bg-gray-5 border-b text-sm">
           <tr>
