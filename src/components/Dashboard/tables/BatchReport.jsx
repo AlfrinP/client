@@ -1,10 +1,9 @@
 import React from "react";
-import Student2 from "../Student2";
-import { Dialog } from "@material-tailwind/react";
+import Printer from "../../../assets/General/Blueprint.png";
+import Download from "../../../assets/General/material-symbols_download.png";
+import { Dialog,Button } from "@material-tailwind/react";
 
-function TableFaculty({ isOpen, handleOpen }) {
-  const [openStudent, setOpenStudent] = React.useState(false);
-  const handleOpenStudent = () => setOpenStudent(!openStudent);
+function BatchReport({ isOpen, handleOpen }) {
 
   const data = [
     {
@@ -59,10 +58,6 @@ function TableFaculty({ isOpen, handleOpen }) {
           clipRule="evenodd"
         />
       </svg>
-      <Student2
-        isOpen={openStudent}
-        handleOpen={handleOpenStudent}
-      />
       <table className="w-full text-sm text-left rtl:text-right text-black ">
         <thead className="text-black uppercase bg-gray-5 border-b text-sm ">
           <tr>
@@ -73,13 +68,10 @@ function TableFaculty({ isOpen, handleOpen }) {
               Regno
             </th>
             <th scope="col" className="px-5 py-3 text-center">
-              Name
+              Student Name
             </th>
             <th scope="col" className="px-5 py-3 text-center">
-              Point
-            </th>
-            <th scope="col" className="px-5 py-3 text-center">
-              action
+              Total Activity Point
             </th>
           </tr>
         </thead>
@@ -93,15 +85,22 @@ function TableFaculty({ isOpen, handleOpen }) {
               <td className="px-5 py-2 text-center font-semibold text-black">{item.regno}</td>
               <td className="px-5 py-2 text-center font-semibold text-black">{item.name}</td>
               <td className="px-5 py-2 text-center font-semibold text-black">{item.point}</td>
-              <td className="px-5 py-2 text-center  text-[#512B81] hover:underline cursor-pointer">
-                <a onClick={handleOpenStudent} href="#">View</a>
-                </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <div className='flex flex-row justify-end gap-8 mt-4 mr-4'>
+          <Button className='bg-blue-gray-100 text-white w-fit flex flex-row center justify-center gap-2 px-2 rounded-md text-lowercase capitalize' style={{color:'#2930D4'}}>
+            <img src={Printer} alt="Printer" />
+            <span className='mr-6'>Print</span>
+          </Button>
+          <Button className='bg-green-100 text-green-600 w-fit flex flex-row center justify-center gap-2 p-1 rounded-md text-lowercase capitalize' style={{color:'#076F2C'}}>
+            <img src={Download} alt="Download" className='w-[30px] pl-2' />
+            <span className='mr-6'>Download</span>
+          </Button>
+        </div>
     </Dialog>
   );
 }
 
-export default TableFaculty;
+export default BatchReport;

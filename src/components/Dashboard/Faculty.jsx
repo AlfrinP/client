@@ -4,11 +4,27 @@ import short from "../../assets/General/short.png";
 import arrow_down from "../../assets/General/arrow_down.svg";
 import TableFaculty from "./tables/TableFaculty";
 import Navbar from "../Navbar";
+import BatchReport from "./tables/BatchReport";
+import Activity from "./tables/Activity";
 
 function Faculty() {
+  const [openBatch, setOpenBatch] = React.useState(false);
+  const handleOpenBatch = () => setOpenBatch(!openBatch);
+
+  const [openActivity, setOpenActivity] = React.useState(false);
+  const handleOpenActivity = () => setOpenActivity(!openActivity);
+
   return (
     <div className="w-full center flex-col">
       <Navbar />
+      <BatchReport
+        isOpen={openBatch}
+        handleOpen={handleOpenBatch}
+      />
+      <Activity
+        isOpen={openActivity}
+        handleOpen={handleOpenActivity}
+      />
       <div className="w-full center flex-col gap-5 px-60">
         <div className="w-full flex gap-10 ">
           <div className="ring-offset-8 ring-2 ring-[#512B81] rounded-full w-32">
@@ -61,7 +77,7 @@ function Faculty() {
                 <span className=" text-white">Add Shortlist</span>
                 <img src={short} width={30} />
               </button>
-              <button className="border-solid border-2 border-[#512B81] text-black">
+              <button onClick={handleOpenBatch} className="border-solid border-2 border-[#512B81] text-black">
                 <img src={arrow_down} width={15} />
                 <span>Download Batch Report</span>
               </button>
@@ -70,11 +86,11 @@ function Faculty() {
               <button className="bg-[#512B81]" >
                 <span className="font-semibold">Pending</span>
               </button>
-              <button className="bg-[#512B81]" >
+              <button onClick={handleOpenActivity} className="bg-[#512B81]" >
                 <span className="font-semibold">Activity Point</span>
               </button>
-              <button className="bg-[#512B81]" >
-                <span className="font-semibold">View sorted list</span>
+              <button onClick={handleOpenActivity} className="border-purple-900 border-2">
+                <span className="font-semibold text-black">View sorted list</span>
               </button>
             </div>
           </div>
