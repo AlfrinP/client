@@ -9,7 +9,7 @@ function Navbar() {
         <img src={christ} />
         <button className="center justify-end gap-1 p-3">
           <img src={logout} />
-          <div className="text-lg text-[#512B81]">Logout</div>
+          <div className="text-lg text-[#512B81] font-semibold">Logout</div>
         </button>
       </div>
     </div>

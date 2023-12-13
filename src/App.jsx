@@ -1,7 +1,7 @@
 import Faculty from "./components/Dashboard/Faculty";
 import Student from "./components/Dashboard/Student";
 import Login from "./components/Login/Login";
-import Student2 from "./components/Dashboard/Student2";
+import CheckCertificate from "./components/Dashboard/CheckCertificate";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Login />
       <Student/>
       <Faculty />
-      <Student2/>
+      <CheckCertificate/>
     </>
   );
 }

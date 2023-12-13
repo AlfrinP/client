@@ -6,6 +6,9 @@ import TableFaculty from "./tables/TableFaculty";
 import Navbar from "../Navbar";
 import BatchReport from "./tables/BatchReport";
 import Activity from "./tables/Activity";
+import Shortlist from "./tables/Shortlist";
+import Sorted from "./tables/Sorted"
+import Pending from "./tables/Pending"
 
 function Faculty() {
   const [openBatch, setOpenBatch] = React.useState(false);
@@ -13,6 +16,15 @@ function Faculty() {
 
   const [openActivity, setOpenActivity] = React.useState(false);
   const handleOpenActivity = () => setOpenActivity(!openActivity);
+
+  const [openShort, setOpenShort] = React.useState(false);
+  const handleOpenShort = () => setOpenShort(!openShort);
+
+  const [openPending, setOpenPending] = React.useState(false);
+  const handleOpenPending = () => setOpenPending(!openPending);
+
+  const [openSorted, setOpenSorted] = React.useState(false);
+  const handleOpenSorted = () => setOpenSorted(!openSorted);
 
   return (
     <div className="w-full center flex-col">
@@ -24,6 +36,18 @@ function Faculty() {
       <Activity
         isOpen={openActivity}
         handleOpen={handleOpenActivity}
+      />
+      <Shortlist
+        isOpen={openShort}
+        handleOpen={handleOpenShort}
+      />
+      <Pending
+        isOpen={openPending}
+        handleOpen={handleOpenPending}
+      />
+      <Sorted
+        isOpen={openSorted}
+        handleOpen={handleOpenSorted}
       />
       <div className="w-full center flex-col gap-5 px-60">
         <div className="w-full flex gap-10 ">
@@ -73,7 +97,7 @@ function Faculty() {
           </div>
           <div className="center flex-col w-fit gap-2 p-5 rounded-lg border-t border-solid border-gray-300 border-opacity-82 bg-white shadow-md shadow-offset-x-11 shadow-offset-y-24 shadow-blur-26 shadow-opacity-20">
             <div className="center gap-3 ">
-              <button className="bg-[#512B81]">
+              <button onClick={handleOpenShort} className="bg-[#512B81]">
                 <span className=" text-white">Add Shortlist</span>
                 <img src={short} width={30} />
               </button>
@@ -83,13 +107,13 @@ function Faculty() {
               </button>
             </div>
             <div className="center w-full gap-3 justify-around">
-              <button className="bg-[#512B81]" >
+              <button onClick={handleOpenPending} className="bg-[#512B81]" >
                 <span className="font-semibold">Pending</span>
               </button>
               <button onClick={handleOpenActivity} className="bg-[#512B81]" >
                 <span className="font-semibold">Activity Point</span>
               </button>
-              <button onClick={handleOpenActivity} className="border-purple-900 border-2">
+              <button onClick={handleOpenSorted} className="border-purple-900 border-2">
                 <span className="font-semibold text-black">View sorted list</span>
               </button>
             </div>

@@ -1,33 +1,29 @@
 import React from "react";
 import sprofile from "../../assets/Dashboard/Student/profile.png";
-import upload from "../../assets/General/file-upload.png";
-import graph from "../../assets/General/graph.png";
-import Table from "./tables/Table";
+import Wdownload from "../../assets/General/Whitedownload.svg";
+import back from "../../assets/General/back.svg"
+import Table3 from "./tables/Table3";
 import Navbar2 from "../Navbar2";
 import FileUploadModel from "./FileUploadModal";
-import ViewPointsModal from "./ViewPointsModal";
-import PopMessage from "./PopMessage";
 import { Dialog } from "@material-tailwind/react";
 
 
-export default function Student2() {
-  const [openFileModal, setOpenFileModal] = React.useState(false);
-  const [openViewPoints, setOpenViewPoints] = React.useState(false);
+export default function Student2({ isOpen, handleOpen }) {
 
+  const [openFileModal, setOpenFileModal] = React.useState(false);
   const handleOpenFileModal = () => setOpenFileModal(!openFileModal);
-  const handleOpenViewPoints = () => setOpenViewPoints(!openViewPoints);
 
   return (
     <>
-    <Dialog size="xxl" className="w-full h-screen center flex-col">
+    <Dialog size="xxl" open={isOpen} handler={handleOpen} className="w-full h-screen center flex-col">
+      <button onClick={handleOpen} className="center justify-end gap-1 p-3 absolute mt-20 mr-20 right-0 top-0">
+      <img src={back} alt="back" />
+      <div className="text-lg text-[#512B81] ml-1 font-semibold">Back</div>
+      </button>
       <Navbar2 />
       <FileUploadModel
         isOpen={openFileModal}
         handleOpen={handleOpenFileModal}
-      />
-      <ViewPointsModal
-        isOpen={openViewPoints}
-        handleOpen={handleOpenViewPoints}
       />
       
       <div className="w-full center flex-col gap-5 px-60">
@@ -59,24 +55,17 @@ export default function Student2() {
               <span className="text-2xl text-[#512B81]">4</span>
             </div>
           </div>
-          <div className="center flex-col gap-3">
-            <button className="bg-[#512B81]" onClick={handleOpenFileModal}>
-              <img src={upload} width={30} />
-              <span className=" text-white">Upload Certificate</span>
-            </button>
-            <button className="bg-[#512B81]" onClick={handleOpenViewPoints}>
-              <img src={graph} width={20} />
-              <span className=" text-white">View Points</span>
+          <div className="center ml-12">
+            <button className="bg-[#512B81] py-4 px-6 mt-5 rounded-lg" onClick={handleOpenFileModal}>
+              <img src={Wdownload} width={30} />
+              <span className=" text-white ml-2">Download Details</span>
             </button>
           </div>
         </div>
         <div className="w-full center shadow-[0_3px_10px_rgb(0,0,0,0.2)] text-black rounded-lg">
-          <Table />
+          <Table3 />
         </div>
       </div>
-      <span className="flex items-start w-full pl-24 ">
-        <PopMessage/>
-      </span>   
     </Dialog>
     </>
   );

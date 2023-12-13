@@ -6,7 +6,7 @@ import {
   Option,
   Select,
 } from "@material-tailwind/react";
-function Activity({ isOpen, handleOpen }) {
+function Sorted({ isOpen, handleOpen }) {
   const data = [
     {
       no: "01",
@@ -56,12 +56,10 @@ function Activity({ isOpen, handleOpen }) {
         <h3 className="text-purple-900">Activity Points</h3>
       </DialogHeader>
       <DialogBody className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full">
-        <h1 className="text-black mb-2">Select Year</h1>
+        <h1 className="text-black mb-2">Select</h1>
         <Select variant="outlined" label="Select">
-          <Option>22-23</Option>
-          <Option>23-24</Option>
-          <Option>24-25</Option>
-          <Option>25-26</Option>
+          <Option>Insufficient points</Option>
+          <Option>Short list</Option>
         </Select>
         <table className="w-full text-sm text-left rtl:text-right text-black mt-2">
           <thead className="text-black uppercase bg-gray-5 border-b text-sm">
@@ -108,4 +106,4 @@ function Activity({ isOpen, handleOpen }) {
   );
 }
 
-export default Activity;
+export default Sorted;
