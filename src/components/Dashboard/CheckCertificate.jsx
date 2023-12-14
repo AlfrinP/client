@@ -1,5 +1,5 @@
 import React from "react";
-import { Dialog,DialogBody,Textarea,Button } from "@material-tailwind/react";
+import { Dialog,DialogHeader,DialogBody,Textarea,Button } from "@material-tailwind/react";
 import LargeVeiw2 from "./LargeVeiw2";
 
 
@@ -7,11 +7,13 @@ const CheckCertificate = ({ isOpen, handleOpen }) => {
 
   return (
     <Dialog open={isOpen} handler={handleOpen} className="p-4">
-      <svg
+        <DialogHeader>
+        <div className="flex items-center justify-end w-full">
+        <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="mr-3 h-5 w-5 float-right mb-2"
+        className="mr-3 h-5 w-5 float-right"
         onClick={handleOpen}
       >
         <path
@@ -20,6 +22,8 @@ const CheckCertificate = ({ isOpen, handleOpen }) => {
           clipRule="evenodd"
         />
       </svg>
+        </div>
+      </DialogHeader>
       <DialogBody>
         <div className="flex flex-row w-full justify-center gap-3 border-t border-black">
           <div className="flex flex-col w-full">

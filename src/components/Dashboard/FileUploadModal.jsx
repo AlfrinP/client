@@ -7,7 +7,10 @@ function FileUploadModel({ isOpen, handleOpen }) {
   };
   return (
     <Dialog open={isOpen} handler={handleOpen} className='p-4'>
-      <svg
+    <DialogHeader>
+        <div className="flex items-center justify-between w-full">
+        <h1 className="text-2xl font-bold text-black">Upload Files</h1>
+        <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -20,8 +23,7 @@ function FileUploadModel({ isOpen, handleOpen }) {
           clipRule="evenodd"
         />
       </svg>
-      <DialogHeader>
-        <h1 className="text-2xl font-bold">Upload files</h1>
+        </div>
       </DialogHeader>
       <DialogBody>
         <form className="w-full flex flex-col items-center mt-6 gap-4" onSubmit={handleSubmit}>

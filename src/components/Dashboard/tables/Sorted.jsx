@@ -39,7 +39,10 @@ function Sorted({ isOpen, handleOpen }) {
   ];
   return (
     <Dialog open={isOpen} handler={handleOpen} className="p-4">
-      <svg
+          <DialogHeader>
+        <div className="flex items-center justify-between w-full">
+        <h1 className="text-2xl font-bold text-purple-900">Activity Point</h1>
+        <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -52,10 +55,9 @@ function Sorted({ isOpen, handleOpen }) {
           clipRule="evenodd"
         />
       </svg>
-      <DialogHeader className="border-b border-gray-600">
-        <h3 className="text-purple-900">Activity Points</h3>
+        </div>
       </DialogHeader>
-      <DialogBody className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full">
+      <DialogBody className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full border-t border-gray-600">
         <h1 className="text-black mb-2">Select</h1>
         <Select variant="outlined" label="Select">
           <Option>Insufficient points</Option>

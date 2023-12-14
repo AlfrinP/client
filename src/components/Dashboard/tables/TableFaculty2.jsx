@@ -105,7 +105,7 @@ function TableFaculty({ isOpen, handleOpen }) {
           {data.map((item, index) => (
             <tr
               key={index}
-              className="odd:bg-white even:bg-[#F7F6FE] "
+              className="odd:bg-white even:bg-[#F7F6FE]"
             >
               <td className="px-5 py-2 text-center font-semibold text-black">{item.no}</td>
               <td className="px-5 py-2 text-center font-semibold text-black">{item.regno}</td>
