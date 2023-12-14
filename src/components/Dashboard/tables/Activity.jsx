@@ -6,37 +6,8 @@ import {
   Option,
   Select,
 } from "@material-tailwind/react";
+import Table4 from "./table4"
 function Activity({ isOpen, handleOpen }) {
-  const data = [
-    {
-      no: "01",
-      name: "Aalap",
-      regno: "CCE22CS001",
-      point: "15",
-      year: "23-24",
-    },
-    {
-      no: "01",
-      name: "Abhishek",
-      regno: "CCE22CS001",
-      point: "15",
-      year: "23-24",
-    },
-    {
-      no: "01",
-      name: "Adithya",
-      regno: "CCE22CS001",
-      point: "15",
-      year: "23-24",
-    },
-    {
-      no: "01",
-      name: "Agna",
-      regno: "CCE22CS001",
-      point: "15",
-      year: "23-24",
-    },
-  ];
   return (
     <Dialog open={isOpen} handler={handleOpen} className="p-4">
           <DialogHeader>
@@ -65,46 +36,7 @@ function Activity({ isOpen, handleOpen }) {
           <Option>24-25</Option>
           <Option>25-26</Option>
         </Select>
-        <table className="w-full text-sm text-left rtl:text-right text-black mt-2">
-          <thead className="text-black uppercase bg-gray-5 border-b text-sm">
-            <tr>
-              <th scope="col" className="px-5 py-3 text-center">
-                No
-              </th>
-              <th scope="col" className="px-5 py-3 text-center">
-                Name
-              </th>
-              <th scope="col" className="px-5 py-3 text-center">
-                Reg no
-              </th>
-              <th scope="col" className="px-5 py-3 text-center">
-                Point
-              </th>
-              <th scope="col" className="px-5 py-3 text-center">
-                Year
-              </th>
-            </tr>
-          </thead>
-          <tbody className="text-black text-md">
-            {data.map((item, index) => (
-              <tr key={index} className="odd:bg-white even:bg-[#F7F6FE] ">
-                <td className="px-5 py-2 text-center text-black font-semibold">{item.no}</td>
-                <td className="px-5 py-2 text-center text-black font-semibold">
-                  {item.name}
-                </td>
-                <td className="px-5 py-2 text-center text-black font-semibold">
-                  {item.regno}
-                </td>
-                <td className="px-5 py-2 text-center text-black font-semibold">
-                  {item.point}
-                </td>
-                <td className="px-5 py-2 text-center text-black font-semibold">
-                  {item.year}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+          <Table4/>
       </DialogBody>
     </Dialog>
   );

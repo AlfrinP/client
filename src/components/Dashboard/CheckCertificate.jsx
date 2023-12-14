@@ -25,7 +25,7 @@ const CheckCertificate = ({ isOpen, handleOpen }) => {
         </div>
       </DialogHeader>
       <DialogBody>
-        <div className="flex flex-row w-full justify-center gap-3 border-t border-black">
+        <div className="flex flex-row w-full justify-center gap-6 border-t border-black">
           <div className="flex flex-col w-full">
           <LargeVeiw2/>
           </div>
