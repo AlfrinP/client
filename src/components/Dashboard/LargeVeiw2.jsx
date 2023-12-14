@@ -4,19 +4,40 @@ import Certificate from "../../assets/General/certificate.png";
 
 const LargeView2 = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleOpen = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <>
+        <div className="relative">
       <img
         onClick={handleOpen}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         alt="nature"
-        className="w-full hover:filter hover:brightness-50 transition cursor-pointer"
+        className="w-full mt-10 ml-5 hover:filter hover:brightness-50 transition cursor-pointer"
         src={Certificate}
       />
+      {isHovered && (
+        <button
+          className="text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white rounded-full px-4 py-2 border-2 w-fit ml-5 mt-5"
+          onClick={handleOpen}
+        >
+          View
+        </button>
+      )}
+    </div>
       <Dialog size="lg" open={isOpen} onClose={handleOpen} className="p-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
