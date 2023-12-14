@@ -12,6 +12,7 @@ export default function PasswordInput(props) {
       <input
         type={isPasswordVisible ? "text" : "password"}
         placeholder={props.name}
+        name={props.name.toLowerCase()}
         className="w-full
         px-8
         py-4
@@ -24,9 +25,10 @@ export default function PasswordInput(props) {
         bg-transparent
         placeholder:text-white
         placeholder:text-lg "
+        autoComplete="on"
       />
-      <button
-        className="absolute inset-y-0 right-0 flex items-center px-4 justify-end mr-3"
+      <div
+        className="absolute inset-y-0 right-0 flex items-center px-4 w-fit justify-end mr-3"
         onClick={togglePasswordVisibility}
       >
         {isPasswordVisible ? (
@@ -65,7 +67,7 @@ export default function PasswordInput(props) {
             />
           </svg>
         )}
-      </button>
+      </div>
     </div>
   );
 }

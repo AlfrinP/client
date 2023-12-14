@@ -10,6 +10,7 @@ import Shortlist from "./tables/Shortlist";
 import Sorted from "./tables/Sorted"
 import Pending from "./tables/Pending"
 
+
 function Faculty() {
   const [openBatch, setOpenBatch] = React.useState(false);
   const handleOpenBatch = () => setOpenBatch(!openBatch);

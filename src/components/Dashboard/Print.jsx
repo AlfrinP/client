@@ -12,7 +12,10 @@ import Download from "../../assets/General/material-symbols_download.png";
 const Print = ({ isOpen, handleOpen }) => {
   return (
     <Dialog open={isOpen} handler={handleOpen} className="p-4">
-      <svg
+      <DialogHeader>
+        <div className="flex items-center justify-between w-full">
+        <h1 className="text-2xl font-bold text-purple-900">Details</h1>
+        <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -25,21 +28,20 @@ const Print = ({ isOpen, handleOpen }) => {
           clipRule="evenodd"
         />
       </svg>
-      <DialogHeader>
-        <h1 className="text-2xl font-bold text-purple-900">Download files</h1>
+        </div>
       </DialogHeader>
       <DialogBody>
-        <div className='center border-t border-gray-600  w-full center justify-center items-center'>
+        <div className='center border-t border-gray-600  w-full center'>
           <img src={Certificate} alt='certificate' className='w-full'/>
         </div>
         <div className='flex flex-row justify-end gap-8 mt-4 mr-4'>
-          <Button className='bg-blue-gray-100 text-white w-fit flex flex-row center justify-center gap-2 px-2 rounded-md text-lowercase capitalize' style={{color:'#2930D4'}}>
+          <Button className='bg-blue-gray-100 text-white w-fit  flex-row center gap-2 p-2 rounded-md text-lowercase capitalize px-4' style={{color:'#2930D4'}}>
             <img src={Printer} alt="Printer" />
-            <span className='mr-6'>Print</span>
+            <span>Print</span>
           </Button>
-          <Button className='bg-green-100 text-green-600 w-fit flex flex-row center justify-center gap-2 p-1 rounded-md text-lowercase capitalize' style={{color:'#076F2C'}}>
-            <img src={Download} alt="Download" className='w-[30px] pl-2' />
-            <span className='mr-6'>Download</span>
+          <Button className='bg-green-100 text-green-600 w-fit flex-row center gap-2 p-2 rounded-md text-lowercase capitalize px-4' style={{color:'#076F2C'}}>
+            <img src={Download} alt="Download" className='w-[30px]' />
+            <span>Download</span>
           </Button>
         </div>
       </DialogBody>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Dialog,DialogBody,Textarea,Button } from "@material-tailwind/react";
-
 import LargeVeiw2 from "./LargeVeiw2";
 
 
@@ -29,7 +28,7 @@ const CheckCertificate = ({ isOpen, handleOpen }) => {
             <div className="flex flex-col center gap-2">
               <h3 className="text-purple-500">Comment box</h3>
               <div className="w-64 ">
-                <Textarea color="purple" label="Comment" placeholder="faculty can review about the certificate and any other about corrections" className="bg-gray-200"/>
+                <Textarea color="purple" label="Comment"  className="bg-gray-200"/>
               </div>
               <div className="flex flex-row gap-3">
                 <Button className="bg-blue-gray-100 px-3 py-2 rounded-full text-lowercase capitalize" style={{ color: "#2930D4" }}>

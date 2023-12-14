@@ -4,14 +4,14 @@ import Wdownload from "../../assets/General/Whitedownload.svg";
 import back from "../../assets/General/back.svg"
 import Table3 from "./tables/Table3";
 import Navbar2 from "../Navbar2";
-import FileUploadModel from "./FileUploadModal";
 import { Dialog } from "@material-tailwind/react";
+import Downloaddetail from "./Downloaddetail";
 
 
 export default function Student2({ isOpen, handleOpen }) {
 
-  const [openFileModal, setOpenFileModal] = React.useState(false);
-  const handleOpenFileModal = () => setOpenFileModal(!openFileModal);
+  const [openDownload, setOpenDownload] = React.useState(false);
+  const handleOpenDownload = () => setOpenDownload(!openDownload);
 
   return (
     <>
@@ -21,9 +21,9 @@ export default function Student2({ isOpen, handleOpen }) {
       <div className="text-lg text-[#512B81] ml-1 font-semibold">Back</div>
       </button>
       <Navbar2 />
-      <FileUploadModel
-        isOpen={openFileModal}
-        handleOpen={handleOpenFileModal}
+      <Downloaddetail
+        isOpen={openDownload}
+        handleOpen={handleOpenDownload}
       />
       
       <div className="w-full center flex-col gap-5 px-60">
@@ -56,7 +56,7 @@ export default function Student2({ isOpen, handleOpen }) {
             </div>
           </div>
           <div className="center ml-12">
-            <button className="bg-[#512B81] py-4 px-6 mt-5 rounded-lg" onClick={handleOpenFileModal}>
+            <button className="bg-[#512B81] py-4 px-6 mt-5 rounded-lg" onClick={handleOpenDownload}>
               <img src={Wdownload} width={30} />
               <span className=" text-white ml-2">Download Details</span>
             </button>
