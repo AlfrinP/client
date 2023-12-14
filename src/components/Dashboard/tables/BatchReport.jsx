@@ -42,9 +42,33 @@ function BatchReport({ isOpen, handleOpen }) {
       name: "Aiswarya",
       point: "15",
     },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Aiswarya",
+      point: "15",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Aiswarya",
+      point: "15",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Aiswarya",
+      point: "15",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Aiswarya",
+      point: "15",
+    },
   ];
   return (
-    <Dialog size="xl" open={isOpen} handler={handleOpen} className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full">
+    <Dialog size="lg" open={isOpen} handler={handleOpen} className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-[400px]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

@@ -31,6 +31,7 @@ const DatePicker = () => {
           dateFormat: "d/m/Y",
         }}
         placeholder="DD/MM/YYYY"
+        className="outline-none"
         value={selectedDate}
         onChange={(dates) => setSelectedDate(dates[0])}
       />

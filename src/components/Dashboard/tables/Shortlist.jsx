@@ -30,13 +30,43 @@ function Shortlist({ isOpen, handleOpen }) {
       regno: "CCE22CS001",
       name: "Agna",
     },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Agna",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Agna",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Agna",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Agna",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Agna",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Agna",
+    },
   ];
   return (
     <Dialog
-      size="xl"
+      size="lg"
       open={isOpen}
       handler={handleOpen}
-      className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full"
+      className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-[400px]"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +99,7 @@ function Shortlist({ isOpen, handleOpen }) {
                 <input
                   type="text"
                   placeholder="search"
-                  className="items-center bg-[#F7F6FE]"
+                  className="items-center bg-[#F7F6FE] outline-none"
                 />
               </div>
             </th>

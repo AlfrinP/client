@@ -34,7 +34,25 @@ function TableFaculty({ isOpen, handleOpen }) {
     {
       no: "01",
       regno: "CCE22CS001",
-      name: "Aissac",
+      name: "Aisac",
+      point: "15",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Aiswarya",
+      point: "15",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Aiswarya",
+      point: "15",
+    },
+    {
+      no: "01",
+      regno: "CCE22CS001",
+      name: "Aiswarya",
       point: "15",
     },
     {
@@ -45,12 +63,12 @@ function TableFaculty({ isOpen, handleOpen }) {
     },
   ];
   return (
-    <Dialog size="xl" open={isOpen} handler={handleOpen} className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full">
+    <Dialog size="lg" open={isOpen} handler={handleOpen} className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-[400px]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="mr-5 h-5 w-5 float-right mt-3"
+        className="mr-7 h-5 w-5 float-right mt-5"
         onClick={handleOpen}
       >
         <path
