@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Search from "../../../assets/General/Search.svg";
 import { Dialog } from "@material-tailwind/react";
 
-function Shortlist({ isOpen, handleOpen }) {
+function Shortlist({ isOpen, handleOpen ,data}) {
   const [isAdded, setIsAdded] = useState(false);
 
   const handleButtonClick = () => {

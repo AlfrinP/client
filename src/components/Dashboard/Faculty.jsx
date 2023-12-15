@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import faculty from "../../assets/Dashboard/Faculty/faculty.png";
 import short from "../../assets/General/short.png";
 import arrow_down from "../../assets/General/arrow_down.svg";
@@ -7,9 +7,10 @@ import Navbar from "../Navbar";
 import BatchReport from "./tables/BatchReport";
 import Activity from "./tables/Activity";
 import Shortlist from "./tables/Shortlist";
-import Sorted from "./tables/Sorted"
-import Pending from "./tables/Pending"
-
+import Sorted from "./tables/Sorted";
+import Pending from "./tables/Pending";
+import axios from "axios";
+import {dep,logdata,baseURL} from "../Util";
 
 function Faculty() {
   const [openBatch, setOpenBatch] = React.useState(false);
@@ -27,29 +28,39 @@ function Faculty() {
   const [openSorted, setOpenSorted] = React.useState(false);
   const handleOpenSorted = () => setOpenSorted(!openSorted);
 
+  const [facultyData, setfacultyData] = useState("");
+
+  
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${baseURL}dashboard/${logdata}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        console.log(response.data);
+        setfacultyData(response.data.faculty);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  let totalStudents = facultyData.students?.length || 0;
+  console.log(totalStudents);
+
   return (
     <div className="w-full center flex-col">
       <Navbar />
-      <BatchReport
-        isOpen={openBatch}
-        handleOpen={handleOpenBatch}
-      />
-      <Activity
-        isOpen={openActivity}
-        handleOpen={handleOpenActivity}
-      />
-      <Shortlist
-        isOpen={openShort}
-        handleOpen={handleOpenShort}
-      />
-      <Pending
-        isOpen={openPending}
-        handleOpen={handleOpenPending}
-      />
-      <Sorted
-        isOpen={openSorted}
-        handleOpen={handleOpenSorted}
-      />
+      <BatchReport isOpen={openBatch} handleOpen={handleOpenBatch} />
+      <Activity isOpen={openActivity} handleOpen={handleOpenActivity} />
+      <Shortlist isOpen={openShort} data={facultyData} handleOpen={handleOpenShort} />
+      <Pending isOpen={openPending} handleOpen={handleOpenPending} />
+      <Sorted isOpen={openSorted} handleOpen={handleOpenSorted} />
       <div className="w-full center flex-col gap-5 px-60">
         <div className="w-full flex gap-10 ">
           <div className="ring-offset-8 ring-2 ring-[#512B81] rounded-full w-32">
@@ -58,13 +69,13 @@ function Faculty() {
           <div className="center flex-col gap-3 items-start">
             <div className="center flex-col items-start">
               <span className="font-normal text-[#512B81]">Faculty Name</span>
-              <span className="text-xl font-semibold">
-                Magniya Davis
-              </span>
+              <span className="text-xl font-semibold">{facultyData.name}</span>
             </div>
             <div className="center flex-col items-start w-fit border-2 border-[#512B81] rounded-xl py-1 px-2 justify-evenly text-white">
               <span className="font-light text-[#512B81] ">Department</span>
-              <span className="font-semibold text-black text-xl">Computer Science</span>
+              <span className="font-semibold text-black text-xl">
+                {dep[facultyData.department] || ""}
+              </span>
             </div>
           </div>
         </div>
@@ -74,12 +85,12 @@ function Faculty() {
             <div className="center gap-3 ">
               <div className="center flex-col items-start bg-[#512B81] rounded-xl w-[180px] py-1 px-2 text-white">
                 <span className="font-light ">Batch :</span>
-                <span className="font-semibold">2022-2026</span>
+                <span className="font-semibold">{facultyData?batch:""}</span>
               </div>
               <div className="center flex-col items-start w-[180px] border-2 border-[#512B81] rounded-xl py-1 px-2 text-white">
                 <span className="font-light text-[#512B81] ">Branch</span>
                 <span className="font-semibold text-black">
-                  Computer Science
+                  {dep[facultyData.department] || ""}
                 </span>
               </div>
             </div>
@@ -92,7 +103,9 @@ function Faculty() {
                 <span className="font-light text-[#512B81] ">
                   Number of Students
                 </span>
-                <span className="font-semibold text-black">63</span>
+                <span className="font-semibold text-black">
+                  {totalStudents}
+                </span>
               </div>
             </div>
           </div>
@@ -102,27 +115,37 @@ function Faculty() {
                 <span className=" text-white">Add Shortlist</span>
                 <img src={short} width={30} />
               </button>
-              <button onClick={handleOpenBatch} className="border-solid border-2 border-[#512B81] text-black">
+              <button
+                onClick={handleOpenBatch}
+                className="border-solid border-2 border-[#512B81] text-black"
+              >
                 <img src={arrow_down} width={15} />
                 <span>Download Batch Report</span>
               </button>
             </div>
             <div className="center w-full gap-3 justify-around">
-              <button onClick={handleOpenPending} className="bg-[#512B81]" >
+              <button onClick={handleOpenPending} className="bg-[#512B81]">
                 <span className="font-semibold">Pending</span>
               </button>
-              <button onClick={handleOpenActivity} className="bg-[#512B81]" >
+              <button onClick={handleOpenActivity} className="bg-[#512B81]">
                 <span className="font-semibold">Activity Point</span>
               </button>
-              <button onClick={handleOpenSorted} className="border-purple-900 border-2">
-                <span className="font-semibold text-black">View sorted list</span>
+              <button
+                onClick={handleOpenSorted}
+                className="border-purple-900 border-2"
+              >
+                <span className="font-semibold text-black">
+                  View sorted list
+                </span>
               </button>
             </div>
           </div>
         </div>
         <div className="font-bold text-lg w-full text-start">Batch Report</div>
         <div className="w-full center shadow-[0_3px_10px_rgb(0,0,0,0.2)] text-black rounded-lg">
-          <TableFaculty />
+          {facultyData.students ? (
+            <TableFaculty data={facultyData.students} />
+          ) : null}
         </div>
       </div>
     </div>

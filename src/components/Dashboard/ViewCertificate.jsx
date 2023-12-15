@@ -48,7 +48,7 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
         isOpen={openPrint}
         handleOpen={handleOpenPrint}
       />
-          <div className="flex flex-col w-full">
+          <form className="flex flex-col w-full">
             <h3 className="mb-4">Activity Name</h3>
             <input
               type="text"
@@ -75,7 +75,7 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
             <div className="flex flex-row">
               <DatePicker />
             </div>
-          </div>
+          </form>
           <div>
             <div className="flex flex-row center gap-2">
               <Button onClick={handleOpenPrint} className="flex flex-row bg-green-100 w-fit p-1 px-4 rounded-md text-lowercase capitalize" style={{color:'#076F2C'}}>

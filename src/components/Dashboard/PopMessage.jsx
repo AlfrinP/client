@@ -9,7 +9,7 @@ import MessageIcon from "../../assets/General/message.png";
 import CloseIcon from "../../assets/General/crossicon.svg";
 import Avatar from "../../assets/General/avatar.png";
 
-function PopMessage() {
+function PopMessage({ data, faculty }) {
   const [isMessageOpen, setIsMessageOpen] = useState(false);
 
   const toggleMessage = () => {
@@ -33,13 +33,18 @@ function PopMessage() {
             </Button>
           </PopoverHandler>
           <PopoverContent>
-            <span className="w-fit flex flex-row center py-6">
-              <img src={Avatar} alt="avatar" className="rounded-full" />
-              <div className="flex flex-col message p-4">
-                <h4 className="font-bold text-black">Magniya Davies</h4>
-                <p>Please Upload the Clear Certificate</p>
-              </div>
-            </span>
+            {data.map((item, index) => {
+              <span className="w-fit flex flex-row center py-6" key={index}>
+                <img src={Avatar} alt="avatar" className="rounded-full" />
+                <div className="flex flex-col message p-4">
+                  <h4 className="font-bold text-black">{faculty}</h4>
+                  <p>{item.name}</p>
+                  {data.comment.map((item, index) => {
+                    <p key={index}>{item.message}</p>;
+                  })}
+                </div>
+              </span>;
+            })}
           </PopoverContent>
         </Popover>
       </div>

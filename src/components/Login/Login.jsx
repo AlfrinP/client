@@ -3,15 +3,16 @@ import si from "../../assets/Login/student_icon.png";
 import fi from "../../assets/Login/faculty_icon.png";
 import book from "../../assets/Login/book.png";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Student from "../Dashboard/Student";
+import {baseURL} from"../Util";
 
 function Login() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-
+  const navigate = useNavigate();
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState);
   }
-
-  const baseURL = "http://localhost:3000/api/auth";
 
   const [data, setData] = useState("Student Login");
   const [logdata, setLogData] = useState("student");
@@ -34,10 +35,10 @@ function Login() {
     bodyFormData.append("email", email);
     bodyFormData.append("password", pass);
     try {
-      const formData = new FormData(e.target); // Use the form element directly to create FormData
+      const formData = new FormData(e.target);
 
       const response = await axios.post(
-        `${baseURL}/signin/${logdata}`,
+        `${baseURL}auth/signin/${logdata}`,
         bodyFormData,
         {
           headers: {
@@ -46,7 +47,13 @@ function Login() {
         }
       );
 
-      console.log(response.data); // Assuming the response contains data you want to log
+      console.log(response.data);
+
+      if (response && response.status === 200) {
+        localStorage.setItem("role", logdata);
+        localStorage.setItem("token", response.data.token);
+        navigate(`/dashboard/${logdata}`)
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -178,7 +185,7 @@ function Login() {
               <span className="text-white">Forgot password ?</span>
             </div>
             <input
-              className="py-3 text-center text-white font-semibold text-lg w-full background-login"
+              className="py-3 text-center cursor-pointer text-white font-semibold text-lg w-full background-login"
               type="submit"
               value="Login"
             />
