@@ -6,40 +6,14 @@ import {
   Option,
   Select,
 } from "@material-tailwind/react";
+import Table4 from "./table4"
 function Activity({ isOpen, handleOpen }) {
-  const data = [
-    {
-      no: "01",
-      name: "Aalap",
-      regno: "CCE22CS001",
-      point: "15",
-      year: "23-24",
-    },
-    {
-      no: "01",
-      name: "Abhishek",
-      regno: "CCE22CS001",
-      point: "15",
-      year: "23-24",
-    },
-    {
-      no: "01",
-      name: "Adithya",
-      regno: "CCE22CS001",
-      point: "15",
-      year: "23-24",
-    },
-    {
-      no: "01",
-      name: "Agna",
-      regno: "CCE22CS001",
-      point: "15",
-      year: "23-24",
-    },
-  ];
   return (
     <Dialog open={isOpen} handler={handleOpen} className="p-4">
-      <svg
+          <DialogHeader>
+        <div className="flex items-center justify-between w-full">
+        <h1 className="text-2xl font-bold text-purple-900">Activity Point</h1>
+        <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -52,10 +26,9 @@ function Activity({ isOpen, handleOpen }) {
           clipRule="evenodd"
         />
       </svg>
-      <DialogHeader className="border-b border-gray-600">
-        <h3 className="text-purple-900">Activity Points</h3>
+        </div>
       </DialogHeader>
-      <DialogBody className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full">
+      <DialogBody className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full border-t border-gray-600">
         <h1 className="text-black mb-2">Select Year</h1>
         <Select variant="outlined" label="Select">
           <Option>22-23</Option>
@@ -63,46 +36,7 @@ function Activity({ isOpen, handleOpen }) {
           <Option>24-25</Option>
           <Option>25-26</Option>
         </Select>
-        <table className="w-full text-sm text-left rtl:text-right text-black mt-2">
-          <thead className="text-black uppercase bg-gray-5 border-b text-sm">
-            <tr>
-              <th scope="col" className="px-5 py-3 text-center">
-                No
-              </th>
-              <th scope="col" className="px-5 py-3 text-center">
-                Name
-              </th>
-              <th scope="col" className="px-5 py-3 text-center">
-                Reg no
-              </th>
-              <th scope="col" className="px-5 py-3 text-center">
-                Point
-              </th>
-              <th scope="col" className="px-5 py-3 text-center">
-                Year
-              </th>
-            </tr>
-          </thead>
-          <tbody className="text-black text-md">
-            {data.map((item, index) => (
-              <tr key={index} className="odd:bg-white even:bg-[#F7F6FE] ">
-                <td className="px-5 py-2 text-center text-black font-semibold">{item.no}</td>
-                <td className="px-5 py-2 text-center text-black font-semibold">
-                  {item.name}
-                </td>
-                <td className="px-5 py-2 text-center text-black font-semibold">
-                  {item.regno}
-                </td>
-                <td className="px-5 py-2 text-center text-black font-semibold">
-                  {item.point}
-                </td>
-                <td className="px-5 py-2 text-center text-black font-semibold">
-                  {item.year}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+          <Table4/>
       </DialogBody>
     </Dialog>
   );

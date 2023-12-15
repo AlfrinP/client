@@ -130,13 +130,8 @@ function Faculty() {
               <button onClick={handleOpenActivity} className="bg-[#512B81]">
                 <span className="font-semibold">Activity Point</span>
               </button>
-              <button
-                onClick={handleOpenSorted}
-                className="border-purple-900 border-2"
-              >
-                <span className="font-semibold text-black">
-                  View sorted list
-                </span>
+              <button onClick={handleOpenSorted} className="border-purple-900 border-2 text-black">
+                <span>View sorted list</span>
               </button>
             </div>
           </div>

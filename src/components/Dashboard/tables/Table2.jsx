@@ -31,9 +31,23 @@ function Table2() {
       point: "15",
       year: "23-24",
     },
+    {
+      no: "01",
+      activity: "NSS",
+      level: "District",
+      point: "15",
+      year: "23-24",
+    },
+    {
+      no: "01",
+      activity: "NSS",
+      level: "District",
+      point: "15",
+      year: "23-24",
+    },
   ];
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-full">
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg w-full h-[200px]">
       <table className="w-full text-sm text-left rtl:text-right text-black">
         <thead className="text-black uppercase bg-gray-5 border-b text-sm">
           <tr>

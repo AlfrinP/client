@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, ButtonGroup } from "@material-tailwind/react";
 import {
   Select,
@@ -13,9 +13,22 @@ import Delete from "../../assets/General/deletered.svg";
 import DatePicker from "./DatePicker";
 
 const EditCertificate = ({ isOpen, handleOpen }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <Dialog open={isOpen} handler={handleOpen} className="p-4">
-      <svg
+    <DialogHeader>
+        <div className="flex items-center justify-between w-full">
+        <h1 className="text-2xl font-bold text-gray-600">Uploaded Details</h1>
+        <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -28,8 +41,7 @@ const EditCertificate = ({ isOpen, handleOpen }) => {
           clipRule="evenodd"
         />
       </svg>
-      <DialogHeader>
-        <h1 className="text-2xl font-bold text-gray-600 hover:text-black">Uploaded Details</h1>
+        </div>
       </DialogHeader>
       <DialogBody>
         <div className="flex flex-row w-full justify-center">
@@ -79,21 +91,23 @@ const EditCertificate = ({ isOpen, handleOpen }) => {
                 Delete
               </Button>
             </div>
-            <img
-              src={Certificate}
-              alt="certificate"
-              className="hover:filter hover:brightness-50 transition mt-10 ml-5"
-            />
-            <div className="flex flex-row gap-5 justify-end">
-              <ButtonGroup variant="outlined">
-                <Button
-                  onClick={handleOpen}
-                  className="flex flex-row  w-fit p-2 px-4 rounded-full border-purple-900 text-lowercase capitalize"
-                  style={{ color: "#512B81" }}
-                >
-                  Cancel
-                </Button>
-              </ButtonGroup>
+            <div className="relative">
+      <img
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        alt="nature"
+        className="w-full mt-10 ml-5 hover:filter hover:brightness-50 transition cursor-pointer"
+        src={Certificate}
+      />
+      {isHovered && (
+        <button
+          className="text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border-white rounded-full px-4 py-2 border-2 w-fit ml-5"
+        >
+          Change
+        </button>
+      )}
+    </div>
+            <div className="flex flex-row gap-5 justify-end mt-10">
               <Button
                 className="flex flex-row bg-purple-900 w-fit p-2 px-6 rounded-full text-lowercase capitalize"
                 style={{ color: "white" }}

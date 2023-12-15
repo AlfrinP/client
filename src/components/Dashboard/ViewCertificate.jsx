@@ -7,22 +7,22 @@ import {
   DialogBody,
   DialogHeader,
 } from "@material-tailwind/react";
-import Blue from "../../assets/General/Edit.svg";
+import BlueClear from "../../assets/General/Blueclear.svg";
 import Download from "../../assets/General/material-symbols_download.png";
 import Delete from "../../assets/General/deletered.svg";
 import DatePicker from "./DatePicker";
 import LargeView from "./LargeView";
-import EditCertificate from "./EditCertificate";
 import Print from "./Print";
 const ViewCertificate = ({ isOpen, handleOpen }) => {
-  const [openEditCertificate, setOpenEditCertificate] = React.useState(false);
   const [openPrint, setOpenPrint] = React.useState(false);
-
-  const handleOpenEditCertificate = () => setOpenEditCertificate(!openEditCertificate);
   const handleOpenPrint = () => setOpenPrint(!openPrint);
+
   return (
     <Dialog open={isOpen} handler={handleOpen} className="p-4">
-      <svg
+      <DialogHeader>
+        <div className="flex items-center justify-between w-full">
+        <h1 className="text-2xl font-bold text-gray-600">Uploaded Details</h1>
+        <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -35,15 +35,10 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
           clipRule="evenodd"
         />
       </svg>
-      <DialogHeader>
-        <h1 className="text-2xl font-bold text-gray-600 hover:text-black">Uploaded Details</h1>
+        </div>
       </DialogHeader>
       <DialogBody>
         <div className="flex flex-row w-full justify-center">
-        <EditCertificate
-        isOpen={openEditCertificate}
-        handleOpen={handleOpenEditCertificate}
-      />
       <Print
         isOpen={openPrint}
         handleOpen={handleOpenPrint}
@@ -82,9 +77,13 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
                 <img src={Download} alt="download" className=" w-[19px]" />
                 Download
               </Button>
-              <Button onClick={handleOpenEditCertificate} className="flex flex-row bg-blue-gray-100 w-fit p-1 px-7 rounded-md text-lowercase capitalize" style={{color:'#2930D4'}}>
-                <img src={Blue} alt="edit" />
-                Edit
+              <Button
+                // onClick={handleOpen}
+                className="flex flex-row bg-blue-gray-100 w-fit p-1 px-5 rounded-md text-lowercase capitalize"
+                style={{ color: "#2930D4" }}
+              >
+                <img src={BlueClear} alt="cancel" />
+                Cancel
               </Button>
               <Button className="flex flex-row bg-red-200 w-fit p-1 px-4 rounded-md text-lowercase capitalize" style={{color:'#FF3333'}}>
                 <img src={Delete} alt="delete" />
@@ -92,10 +91,10 @@ const ViewCertificate = ({ isOpen, handleOpen }) => {
               </Button>
             </div>
             <LargeView/>
-            <div className="flex flex-row gap-5 justify-end">
+            <div className="flex flex-row gap-5 justify-end mt-6">
               <ButtonGroup variant="outlined">
-                <Button onClick={handleOpen} className="flex flex-row  w-fit p-2 px-4 rounded-full border-purple-900 text-lowercase capitalize" style={{color:'#512B81'}}>
-                  Cancel
+                <Button className="flex flex-row  w-fit p-2 px-4 rounded-full border-purple-900 text-lowercase capitalize" style={{color:'#512B81'}}>
+                  Change
                 </Button>
               </ButtonGroup>
               <Button className="flex flex-row bg-purple-900 w-fit p-2 px-6 rounded-full text-lowercase capitalize" style={{color:'white'}}>
