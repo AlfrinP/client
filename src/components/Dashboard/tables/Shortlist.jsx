@@ -2,65 +2,14 @@ import React, { useState } from 'react';
 import Search from "../../../assets/General/Search.svg";
 import { Dialog } from "@material-tailwind/react";
 
-function Shortlist({ isOpen, handleOpen ,data}) {
+function Shortlist({ isOpen, handleOpen, data }) {
   const [isAdded, setIsAdded] = useState(false);
 
   const handleButtonClick = () => {
     setIsAdded(true);
   };
+  console.log(data)
 
-  const data = [
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Aalap",
-    },
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Abhishek",
-    },
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Adithya",
-    },
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Agna",
-    },
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Agna",
-    },
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Agna",
-    },
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Agna",
-    },
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Agna",
-    },
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Agna",
-    },
-    {
-      no: "01",
-      regno: "CCE22CS001",
-      name: "Agna",
-    },
-  ];
   return (
     <Dialog
       size="lg"
@@ -94,7 +43,7 @@ function Shortlist({ isOpen, handleOpen ,data}) {
               Student Name
             </th>
             <th scope="col" className="px-5 py-3 text-center w-[285px]">
-              <div className="border border-gray-500 rounded-full  center p-2 bg-[#F7F6FE]">
+              <div className="border border-gray-500 rounded-full center p-2 bg-[#F7F6FE]">
                 <img src={Search} alt="search" className="w-6 mr-2" />
                 <input
                   type="text"
@@ -105,12 +54,13 @@ function Shortlist({ isOpen, handleOpen ,data}) {
             </th>
           </tr>
         </thead>
-        <tbody className="text-black text-md">
+        {
+          data?(<tbody className="text-black text-md">
           {data.map((item, index) => (
-            <tr key={index} className="odd:bg-white even:bg-[#F7F6FE] ">
-              <td className="px-5 py-2 text-center">{item.no}</td>
-              <td className="px-5 py-2 text-center">{item.regno}</td>
-              <td className="px-5 py-2 text-center">{item.name}</td>
+            <tr key={index} className={index % 2 === 0 ? 'even:bg-[#F7F6FE]' : 'odd:bg-white'}>
+              <td className="px-5 py-2 text-center">{item.id}</td>
+              <td className="px-5 py-2 text-center">{item.email}</td>
+              <td className="px-5 py-2 text-center">{item.department}</td>
               <td className="px-5 py-2 text-center text-[#512B81] cursor-pointer">
                 <a onClick={handleButtonClick} href="#">
                   {isAdded ? (
@@ -122,7 +72,9 @@ function Shortlist({ isOpen, handleOpen ,data}) {
               </td>
             </tr>
           ))}
-        </tbody>
+        </tbody>):null
+        }
+        
       </table>
     </Dialog>
   );

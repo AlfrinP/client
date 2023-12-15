@@ -14,6 +14,7 @@ import DatePicker from "./DatePicker";
 import LargeView from "./LargeView";
 import Print from "./Print";
 const ViewCertificate = ({ isOpen, handleOpen }) => {
+  
   const [openPrint, setOpenPrint] = React.useState(false);
   const handleOpenPrint = () => setOpenPrint(!openPrint);
 

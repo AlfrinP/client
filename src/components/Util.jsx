@@ -9,3 +9,5 @@ const dep = {
 const baseURL = "http://localhost:3000/api/";
 
 const logdata = localStorage.getItem("role");
+
+export { baseURL ,dep,logdata};

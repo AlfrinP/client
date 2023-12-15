@@ -4,7 +4,6 @@ import fi from "../../assets/Login/faculty_icon.png";
 import book from "../../assets/Login/book.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Student from "../Dashboard/Student";
 import {baseURL} from"../Util";
 
 function Login() {
